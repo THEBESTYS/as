@@ -65,8 +65,7 @@ class FormHandler {
 
   async sendToGoogleSheets(data) {
     // Google Apps Script URL (실제 배포 후 변경)
-    const scriptUrl = GOOGLE_SCRIPT_URL || 'YOUR_GOOGLE_SCRIPT_URL';
-    
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbxaqrNwqBnzdXO0QsVFSDmAJz-Ul_k-0s_6w3a_Fd5UXtPsdUntZBGdH3fIRgO_B7jYNA/exec';
     const response = await fetch(scriptUrl, {
       method: 'POST',
       mode: 'no-cors', // CORS 이슈 방지
