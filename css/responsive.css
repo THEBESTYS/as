@@ -1,41 +1,9 @@
 /* responsive.css */
 
-/* 모바일 퍼스트 접근법 */
-
-/* 헤더 및 네비게이션 반응형 */
+/* 태블릿 (768px ~ 1024px) */
 @media (max-width: 1024px) {
-  .nav-menu {
-    display: none;
-    position: fixed;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background: rgba(10, 10, 20, 0.95);
-    backdrop-filter: blur(20px);
-    flex-direction: column;
-    padding: 20px;
-    gap: 20px;
-    z-index: 999;
-  }
-  
-  .nav-menu.active {
-    display: flex;
-  }
-  
-  .menu-toggle {
-    display: block;
-  }
-  
-  .nav-btn {
-    margin-top: 20px;
-    text-align: center;
-  }
-}
-
-/* 히어로 섹션 반응형 */
-@media (max-width: 768px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
   
   .hero-visual {
@@ -47,14 +15,41 @@
     right: auto;
   }
   
-  .hero-section {
+  .philosophy-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 모바일 (768px 이하) */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--color-white);
     flex-direction: column;
-    text-align: center;
-    padding-top: 120px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    gap: 15px;
   }
   
-  .hero-content {
-    max-width: 100%;
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .hero-section {
+    padding: 120px 0 60px;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
   }
   
   .hero-buttons {
@@ -62,47 +57,47 @@
     align-items: center;
   }
   
-  .btn-primary, .btn-secondary {
+  .hero-buttons a {
     width: 100%;
     justify-content: center;
   }
-}
-
-/* 서비스 그리드 반응형 */
-@media (max-width: 768px) {
-  .services-grid {
+  
+  .philosophy-content {
     grid-template-columns: 1fr;
   }
   
-  .service-card {
+  .form-section {
     padding: 30px 20px;
-  }
-}
-
-/* 폼 반응형 */
-@media (max-width: 768px) {
-  .consultation-wrapper {
-    grid-template-columns: 1fr;
   }
   
   .form-grid {
     grid-template-columns: 1fr;
   }
   
-  .form-section {
-    padding: 20px;
+  .checkbox-group-grid,
+  .radio-group {
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
-/* 푸터 반응형 */
-@media (max-width: 768px) {
+/* 작은 모바일 (480px 이하) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .form-section h3 {
+    font-size: 1.1rem;
+  }
+  
   .footer-content {
     grid-template-columns: 1fr;
     text-align: center;
-  }
-  
-  .footer-links {
-    grid-template-columns: 1fr;
   }
   
   .footer-legal {
@@ -111,72 +106,21 @@
   }
 }
 
-/* 작은 화면 글자 크기 조정 */
-@media (max-width: 480px) {
-  .section-title {
-    font-size: 2rem;
+/* 다크 모드 대응 (옵션) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #FFFFFF;
+    --color-secondary: #CCCCCC;
+    --color-light: #1A1A1A;
+    --color-white: #2D2D2D;
+    --color-border: #444444;
   }
   
-  .hero-title {
-    font-size: 2rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  
-  .section-subtitle {
-    font-size: 1rem;
-  }
-}
-
-/* 다크 모드 대응 (기본이 다크 모드) */
-@media (prefers-color-scheme: light) {
-  body {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #333;
-  }
-  
-  .glass-card {
-    background: rgba(255, 255, 255, 0.9);
-    color: #333;
-  }
-  
-  .nav-link {
-    color: #333;
-  }
-}
-
-/* 고대비 모드 대응 */
-@media (prefers-contrast: high) {
-  .btn-primary, .btn-secondary {
-    border: 2px solid currentColor;
-  }
-  
+  /* 입력 필드는 여전히 밝게 유지 */
   .form-group input,
   .form-group select,
   .form-group textarea {
-    border: 2px solid currentColor;
-  }
-}
-
-/* 프린트 스타일 */
-@media print {
-  .bg-effects,
-  .glass-header,
-  .hero-buttons,
-  .social-links,
-  .btn-submit {
-    display: none !important;
-  }
-  
-  body {
-    background: white !important;
-    color: black !important;
-  }
-  
-  a {
-    color: black !important;
-    text-decoration: underline !important;
+    background: #FFFFFF !important;
+    color: #333333 !important;
   }
 }
