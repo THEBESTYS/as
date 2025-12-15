@@ -3,15 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ashop - 디지털 브랜딩 아키텍처</title>
-    
-    <!-- Open Graph 메타태그 -->
-    <meta property="og:title" content="ashop - 디지털 브랜딩 아키텍처">
-    <meta property="og:description" content="전략과 미학이 만나는 프리미엄 브랜딩 에이전시">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1552664730-d307ca884978">
+    <title>ashop - 브랜딩을 위한 전략적 홈페이지</title>
     
     <!-- 폰트 -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <!-- 아이콘 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -24,32 +19,20 @@
     <link rel="icon" type="image/svg+xml" href="assets/ashop-logo.svg">
 </head>
 <body>
-    <!-- 배경 효과 -->
-    <div class="bg-effects">
-        <div class="particles" id="particles-js"></div>
-        <div class="gradient-blob blob-1"></div>
-        <div class="gradient-blob blob-2"></div>
-        <div class="gradient-blob blob-3"></div>
-    </div>
-    
     <!-- 헤더 -->
-    <header class="glass-header">
+    <header class="main-header">
         <div class="container">
             <nav class="navbar">
                 <a href="/" class="logo">
-                    <svg width="120" height="40" viewBox="0 0 120 40">
-                        <!-- 아트테크 로고 -->
-                        <path d="M10,20 L30,5 L50,20 L30,35 Z" fill="url(#gradient)" class="logo-shape"/>
-                        <text x="60" y="25" class="logo-text">ashop</text>
-                    </svg>
+                    <span class="logo-mark">a</span>
+                    <span class="logo-text">shop</span>
                 </a>
                 
                 <div class="nav-menu">
+                    <a href="#philosophy" class="nav-link">철학</a>
                     <a href="#services" class="nav-link">서비스</a>
-                    <a href="#portfolio" class="nav-link">포트폴리오</a>
                     <a href="#process" class="nav-link">프로세스</a>
-                    <a href="#contact" class="nav-link">문의하기</a>
-                    <a href="#order" class="nav-btn">주문 시작하기</a>
+                    <a href="#estimate" class="nav-link nav-btn">무료 견적</a>
                 </div>
                 
                 <button class="menu-toggle">
@@ -58,191 +41,283 @@
             </nav>
         </div>
     </header>
-    
+
     <!-- 히어로 섹션 -->
-    <section class="hero-section" id="hero">
+    <section class="hero-section">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title kinetic-text">
-                    <span class="gradient-text">디지털 브랜드</span>
-                    <span class="typing-text" id="typing"></span>
-                </h1>
+                <h1 class="hero-title">Building Brands<br><span class="highlight">That Matter</span></h1>
                 <p class="hero-subtitle">
-                    아트와 기술이 만나 비즈니스의 미래를 설계합니다.<br>
-                    ashop은 브랜드의 디지털 DNA를 재구성합니다.
+                    홈페이지 제작이 아닌, <strong>브랜딩을 위한 홈페이지</strong>를 만듭니다.<br>
+                    마케팅과 영업을 이끌어내는 전략적 디지털 존재감을 설계합니다.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn-primary">
-                        <i class="fas fa-rocket"></i> 무료 컨설팅 받기
+                    <a href="#estimate" class="btn-primary">
+                        <i class="fas fa-file-alt"></i> 무료 견적 신청
                     </a>
-                    <a href="#portfolio" class="btn-secondary">
-                        <i class="fas fa-play-circle"></i> 작품 보기
+                    <a href="#philosophy" class="btn-secondary">
+                        <i class="fas fa-play-circle"></i> 우리의 철학 보기
                     </a>
                 </div>
             </div>
             
             <div class="hero-visual">
-                <div class="floating-element">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800" 
-                         alt="디지털 아트" class="hero-image" loading="lazy">
-                    <div class="floating-badge">
-                        <span>🏆 2024 디지털 디자인 어워드</span>
-                    </div>
-                </div>
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                     alt="브랜드 전략 워크샵" class="hero-image" loading="lazy">
             </div>
         </div>
     </section>
-    
-    <!-- 서비스 섹션 -->
-    <section class="services-section" id="services">
+
+    <!-- 브랜드 철학 섹션 -->
+    <section class="philosophy-section" id="philosophy">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Architectural Services</h2>
-                <p class="section-subtitle">브랜드의 디지털 기반을 구축하는 종합 솔루션</p>
+                <h2 class="section-title">a의 철학, shop의 전략</h2>
+                <p class="section-subtitle">ashop은 단순한 웹사이트 제작자가 아닌, 디지털 브랜드 아키텍트입니다.</p>
             </div>
             
-            <div class="services-grid">
-                <div class="service-card glass-card">
-                    <div class="service-icon">
-                        <i class="fas fa-vector-square"></i>
+            <div class="philosophy-content">
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">
+                        <span class="letter-a">a</span>
                     </div>
-                    <h3>브랜드 아키텍처</h3>
-                    <p>체계적인 브랜드 전략과 디자인 시스템 구축</p>
-                    <ul class="service-features">
-                        <li>브랜드 아이덴티티 디자인</li>
-                        <li>디자인 시스템 개발</li>
-                        <li>브랜드 가이드라인</li>
-                    </ul>
+                    <h3>Aesthetic<br>미학</h3>
+                    <p>단순한 디자인이 아닌, 브랜드의 핵심 가치를 시각적 언어로 전환하는 미학적 해석.</p>
                 </div>
                 
-                <div class="service-card glass-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">
+                        <span class="letter-s">s</span>
                     </div>
-                    <h3>디지털 개발</h3>
-                    <p>최신 기술을 활용한 웹/앱 솔루션 구현</p>
-                    <ul class="service-features">
-                        <li>반응형 웹사이트 개발</li>
-                        <li>웹 애플리케이션 제작</li>
-                        <li>프로그레시브 웹 앱</li>
-                    </ul>
+                    <h3>Strategic<br>전략적</h3>
+                    <p>비즈니스 목표에 맞춘 체계적 접근. 모든 픽셀에 전략적 의도를 담습니다.</p>
                 </div>
                 
-                <div class="service-card glass-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-network"></i>
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">
+                        <span class="letter-h">h</span>
                     </div>
-                    <h3>성장 전략</h3>
-                    <p>데이터 기반 마케팅 및 비즈니스 성장 솔루션</p>
-                    <ul class="service-features">
-                        <li>데이터 분석 및 최적화</li>
-                        <li>마케팅 자동화</li>
-                        <li>사용자 경험 연구</li>
-                    </ul>
+                    <h3>Holistic<br>종합적</h3>
+                    <p>브랜드 아이덴티티부터 사용자 경험까지, 분절되지 않은 통합적 솔루션.</p>
                 </div>
+                
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">
+                        <span class="letter-p">p</span>
+                    </div>
+                    <h3>Presence<br>존재감</h3>
+                    <p>단순한 온라인 공간이 아닌, 고객의 마음에 각인되는 지속 가능한 디지털 존재감.</p>
+                </div>
+            </div>
+            
+            <div class="philosophy-statement">
+                <p class="statement">
+                    "ashop은 <strong>진정성 있는 디지털 존재감을 종합적으로 구축하는 전략적 미학 작업실</strong>입니다.<br>
+                    우리는 단순히 '홈페이지를 만드는' 것이 아니라, 당신의 브랜드가 시장에서 <strong>기억되고, 사랑받고, 성장할 수 있는 기반</strong>을 설계합니다."
+                </p>
             </div>
         </div>
     </section>
-    
-    <!-- 주문 섹션 (Google Sheets 연동) -->
-    <section class="order-section" id="order">
+
+    <!-- 무료 견적 신청 섹션 (새로운 폼) -->
+    <section class="estimate-section" id="estimate">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">주문 시작하기</h2>
-                <p class="section-subtitle">프로젝트 요구사항을 상세히 알려주시면 맞춤형 견적을 제공드립니다</p>
+                <h2 class="section-title">무료 견적 신청</h2>
+                <p class="section-subtitle">프로젝트 요구사항을 알려주시면 24시간 내로 상세 견적을 발송해 드립니다.</p>
             </div>
             
-            <div class="order-form-wrapper glass-card">
-                <form id="projectOrderForm" class="order-form">
-                    <input type="hidden" name="form-type" value="project-order">
+            <div class="estimate-form-wrapper">
+                <form id="estimateForm" class="estimate-form">
+                    <input type="hidden" name="form-type" value="estimate-request">
                     
-                    <!-- 기본 정보 -->
+                    <!-- 섹션 1: 기본 정보 -->
                     <div class="form-section">
-                        <h3><i class="fas fa-user"></i> 기본 정보</h3>
+                        <h3><i class="fas fa-user"></i> 1. 기본 정보</h3>
                         <div class="form-grid">
                             <div class="form-group">
-                                <label for="orderName">담당자 이름 *</label>
-                                <input type="text" id="orderName" name="name" required>
+                                <label for="name">이름 *</label>
+                                <input type="text" id="name" name="name" required placeholder="홍길동">
                             </div>
                             <div class="form-group">
-                                <label for="orderCompany">회사/브랜드명 *</label>
-                                <input type="text" id="orderCompany" name="company" required>
+                                <label for="email">이메일 *</label>
+                                <input type="email" id="email" name="email" required placeholder="example@email.com">
                             </div>
                             <div class="form-group">
-                                <label for="orderEmail">이메일 *</label>
-                                <input type="email" id="orderEmail" name="email" required>
+                                <label for="phone">전화번호</label>
+                                <input type="tel" id="phone" name="phone" placeholder="010-1234-5678">
                             </div>
                             <div class="form-group">
-                                <label for="orderPhone">연락처</label>
-                                <input type="tel" id="orderPhone" name="phone">
+                                <label for="company">회사명 / 브랜드명</label>
+                                <input type="text" id="company" name="company" placeholder="예) 플랜씨랩 치과, ○○ 로컵">
                             </div>
                         </div>
                     </div>
                     
-                    <!-- 프로젝트 정보 -->
+                    <!-- 섹션 2: 업종 / 홈페이지 종류 -->
                     <div class="form-section">
-                        <h3><i class="fas fa-project-diagram"></i> 프로젝트 정보</h3>
+                        <h3><i class="fas fa-briefcase"></i> 2. 업종 / 홈페이지 종류</h3>
                         <div class="form-group">
-                            <label for="projectType">프로젝트 유형 *</label>
-                            <select id="projectType" name="projectType" required>
-                                <option value="">선택해주세요</option>
-                                <option value="branding">브랜드 아이덴티티</option>
-                                <option value="website">웹사이트 제작</option>
-                                <option value="webapp">웹 애플리케이션</option>
-                                <option value="redesign">리디자인</option>
-                                <option value="package">종합 패키지</option>
+                            <label for="industry">업종 선택 *</label>
+                            <select id="industry" name="industry" required>
+                                <option value="">업종을 선택하세요</option>
+                                <option value="의료/병원">의료/병원</option>
+                                <option value="법률/컨설팅">법률/컨설팅</option>
+                                <option value="교육">교육</option>
+                                <option value="리테일/패션">리테일/패션</option>
+                                <option value="F&B">F&B</option>
+                                <option value="테크/스타트업">테크/스타트업</option>
+                                <option value="기타">기타</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="projectBudget">예산 범위 *</label>
-                            <select id="projectBudget" name="budget" required>
-                                <option value="">선택해주세요</option>
-                                <option value="500-1000">500만원 - 1,000만원</option>
-                                <option value="1000-3000">1,000만원 - 3,000만원</option>
-                                <option value="3000-5000">3,000만원 - 5,000만원</option>
-                                <option value="5000+">5,000만원 이상</option>
-                                <option value="discuss">협의 후 결정</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="projectTimeline">희망 일정 *</label>
-                            <select id="projectTimeline" name="timeline" required>
-                                <option value="">선택해주세요</option>
-                                <option value="urgent">급함 (1개월 이내)</option>
-                                <option value="normal">보통 (1-3개월)</option>
-                                <option value="flexible">유연함 (3-6개월)</option>
-                            </select>
+                            <label>홈페이지 유형 * (복수 선택 가능)</label>
+                            <div class="checkbox-group-grid">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="website-type" value="브랜드 소개형"> 브랜드 소개형
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="website-type" value="예약·상담 중심"> 예약·상담 중심
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="website-type" value="상품 판매(결제)형"> 상품 판매(결제)형
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="website-type" value="랜딩 페이지(광고용)"> 랜딩 페이지(광고용)
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="website-type" value="블로그/콘텐츠형"> 블로그/콘텐츠형
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="website-type" value="기타"> 기타
+                                </label>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- 상세 요구사항 -->
+                    <!-- 섹션 3: 규모 / 페이지 수 -->
                     <div class="form-section">
-                        <h3><i class="fas fa-file-alt"></i> 상세 요구사항</h3>
+                        <h3><i class="fas fa-sitemap"></i> 3. 규모 / 페이지 수</h3>
                         <div class="form-group">
-                            <label for="projectDescription">프로젝트 설명 *</label>
-                            <textarea id="projectDescription" name="description" rows="5" 
-                                      placeholder="프로젝트의 목표, 타겟 고객, 참고할 사이트나 디자인 등 자세히 설명해주세요." required></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="referenceLinks">참고 자료 (선택)</label>
-                            <textarea id="referenceLinks" name="references" rows="3" 
-                                      placeholder="참고할 웹사이트 URL, 디자인, 또는 자료들을 알려주세요."></textarea>
-                        </div>
-                        
-                        <!-- 파일 업로드 -->
-                        <div class="form-group">
-                            <label for="fileUpload">참고 파일 첨부 (선택)</label>
-                            <div class="file-upload-area" id="dropArea">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <p>파일을 여기에 드래그하거나 클릭해서 업로드</p>
-                                <input type="file" id="fileUpload" name="attachments" multiple 
-                                       accept=".jpg,.jpeg,.png,.pdf,.ai,.psd,.zip">
-                                <small>최대 10MB, 이미지/PDF/AI/PSD/ZIP 파일 가능</small>
+                            <label>예상 페이지 수 *</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="page-count" value="5페이지 이하" required> 5페이지 이하
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="page-count" value="6~10페이지"> 6~10페이지
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="page-count" value="11~20페이지"> 11~20페이지
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="page-count" value="20페이지 이상"> 20페이지 이상
+                                </label>
                             </div>
-                            <div id="fileList"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 섹션 4: 디자인 스타일 & 레퍼런스 -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-palette"></i> 4. 디자인 스타일 & 레퍼런스</h3>
+                        <div class="form-group">
+                            <label>원하는 분위기 * (복수 선택 가능)</label>
+                            <div class="checkbox-group-grid">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="design-style" value="심플 / 미니멀"> 심플 / 미니멀
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="design-style" value="고급 / 프리미엄"> 고급 / 프리미엄
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="design-style" value="튀는 컬러 / 역동적"> 튀는 컬러 / 역동적
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="design-style" value="차분하고 신뢰감 있는"> 차분하고 신뢰감 있는
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="design-style" value="기타"> 기타
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="references">참고하고 싶은 홈페이지 주소 (최대 3개, 선택)</label>
+                            <textarea id="references" name="references" rows="2" placeholder="https://예시사이트.com"></textarea>
+                            <small>참고할 사이트의 URL을 입력해주세요. (쉼표로 구분)</small>
+                        </div>
+                    </div>
+                    
+                    <!-- 섹션 5: 필요한 기능 -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-cogs"></i> 5. 필요한 기능</h3>
+                        <div class="form-group">
+                            <label>필요한 기능 선택 (복수 선택 가능)</label>
+                            <div class="checkbox-group-grid">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="features" value="회원가입/로그인"> 회원가입 / 로그인
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="features" value="온라인 예약/상담 신청"> 온라인 예약 / 상담 신청
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="features" value="상품 결제(카드, 계좌 등)"> 상품 결제(카드, 계좌 등)
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="features" value="게시판/블로그"> 게시판 / 블로그
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="features" value="다국어 지원"> 다국어 지원
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="features" value="관리자 페이지"> 관리자 페이지(콘텐츠 직접 수정)
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="features" value="챗봇/AI 연동"> 챗봇 / AI 연동
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="features" value="기타"> 기타
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 섹션 6: 일정 · 예산 -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-calendar-alt"></i> 6. 일정 · 예산</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>희망 오픈 시기 *</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="timeline" value="가능한 빨리" required> 가능한 빨리
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="timeline" value="2주 이내"> 2주 이내
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="timeline" value="1개월 이내"> 1개월 이내
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="timeline" value="기타"> 기타
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="budget">예상 예산 범위</label>
+                                <input type="text" id="budget" name="budget" placeholder="예) 500-1000만원">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 섹션 7: 프로젝트 설명 -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-file-alt"></i> 7. 프로젝트 설명</h3>
+                        <div class="form-group">
+                            <label for="project-desc">현재 상황과 원하는 점을 자유롭게 적어주세요 *</label>
+                            <textarea id="project-desc" name="project-desc" rows="5" required placeholder="예) 병원 리브랜딩 중이라 새 홈페이지가 필요합니다. 예약 가능과 블로그, 병원 소개 페이지가 중요하고, 모바일에서 보기 좋게 만들어졌으면 합니다."></textarea>
                         </div>
                     </div>
                     
@@ -257,15 +332,15 @@
                         </div>
                         
                         <div class="checkbox-group">
-                            <input type="checkbox" id="newsletterSubscribe" name="newsletterSubscribe">
-                            <label for="newsletterSubscribe">
-                                ashop의 인사이트 뉴스레터를 구독합니다
+                            <input type="checkbox" id="marketingConsent" name="marketingConsent">
+                            <label for="marketingConsent">
+                                이메일로 마케팅 정보를 받겠습니다
                             </label>
                         </div>
                         
                         <div class="form-submit">
                             <button type="submit" class="btn-submit">
-                                <i class="fas fa-paper-plane"></i> 프로젝트 요청 보내기
+                                <i class="fas fa-paper-plane"></i> 견적 요청하기
                             </button>
                             <p class="form-notice">
                                 제출 후 24시간 이내에 담당자가 연락드립니다.
@@ -279,91 +354,16 @@
                     <div class="success-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
-                    <h3>요청이 성공적으로 전송되었습니다!</h3>
-                    <p>24시간 이내에 담당자가 연락드리겠습니다.</p>
-                    <p>확인 이메일을 발송했습니다. 스팸함도 확인해주세요.</p>
+                    <h3>견적 요청이 완료되었습니다!</h3>
+                    <p>소중한 신청 감사합니다. 24시간 이내에 담당자가 상세 견적과 함께 연락드리겠습니다.</p>
                     <button onclick="location.reload()" class="btn-primary">
-                        <i class="fas fa-plus"></i> 추가 요청하기
+                        <i class="fas fa-plus"></i> 추가 문의하기
                     </button>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- 무료 상담 신청 (기존 기능 유지) -->
-    <section class="consultation-section" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">무료 컨설팅 신청</h2>
-                <p class="section-subtitle">30분 무료 상담으로 프로젝트의 가능성을 확인해보세요</p>
-            </div>
-            
-            <div class="consultation-wrapper glass-card">
-                <div class="consultation-info">
-                    <h3><i class="fas fa-calendar-check"></i> 상담 안내</h3>
-                    <ul class="info-list">
-                        <li><i class="fas fa-check"></i> 비즈니스 현황 분석</li>
-                        <li><i class="fas fa-check"></i> 맞춤형 솔루션 제안</li>
-                        <li><i class="fas fa-check"></i> 예산 및 일정 산출</li>
-                        <li><i class="fas fa-check"></i> 성공 사례 공유</li>
-                    </ul>
-                    
-                    <div class="contact-details">
-                        <p><i class="fas fa-phone"></i> 02-1234-5678</p>
-                        <p><i class="fas fa-envelope"></i> hello@ashop.design</p>
-                        <p><i class="fas fa-clock"></i> 평일 09:00 - 18:00</p>
-                    </div>
-                </div>
-                
-                <!-- Google Sheets 연동 폼 -->
-                <form id="consultationForm" class="consultation-form">
-                    <input type="hidden" name="form-type" value="consultation">
-                    
-                    <div class="form-group">
-                        <label for="consultName">이름 *</label>
-                        <input type="text" id="consultName" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="consultCompany">회사명 *</label>
-                        <input type="text" id="consultCompany" name="company" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="consultEmail">이메일 *</label>
-                        <input type="email" id="consultEmail" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="consultPhone">전화번호</label>
-                        <input type="tel" id="consultPhone" name="phone">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="consultService">관심 서비스 *</label>
-                        <select id="consultService" name="service" required>
-                            <option value="">선택해주세요</option>
-                            <option value="brand">브랜딩</option>
-                            <option value="web">웹사이트</option>
-                            <option value="marketing">마케팅</option>
-                            <option value="all">전체 패키지</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="consultMessage">간단한 메시지 (선택)</label>
-                        <textarea id="consultMessage" name="message" rows="3" 
-                                  placeholder="궁금한 점이나 특별한 요청사항이 있다면 적어주세요."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn-submit">
-                        <i class="fas fa-calendar-alt"></i> 무료 상담 신청하기
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-    
+
     <!-- 푸터 -->
     <footer class="footer">
         <div class="container">
@@ -371,41 +371,28 @@
                 <div class="footer-brand">
                     <a href="/" class="footer-logo">ashop</a>
                     <p class="footer-tagline">Architecting Digital Presence</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    </div>
+                    <p class="footer-philosophy">진정성 있는 디지털 존재감을 종합적으로 구축하는 전략적 미학 작업실</p>
                 </div>
                 
                 <div class="footer-links">
                     <div class="footer-column">
-                        <h4>서비스</h4>
-                        <a href="#services">브랜드 아키텍처</a>
-                        <a href="#services">디지털 개발</a>
-                        <a href="#services">성장 전략</a>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>회사</h4>
-                        <a href="#about">소개</a>
-                        <a href="#portfolio">포트폴리오</a>
-                        <a href="#process">프로세스</a>
-                    </div>
-                    
-                    <div class="footer-column">
                         <h4>문의</h4>
-                        <a href="#contact">무료 상담</a>
-                        <a href="#order">주문하기</a>
-                        <a href="#faq">자주 묻는 질문</a>
+                        <p><i class="fas fa-envelope"></i> contact@ashop.design</p>
+                        <p><i class="fas fa-phone"></i> 02-1234-5678</p>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>서비스</h4>
+                        <a href="#philosophy">브랜드 철학</a>
+                        <a href="#services">서비스 소개</a>
+                        <a href="#process">제작 프로세스</a>
+                        <a href="#estimate">견적 신청</a>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <p>© 2024 ashop. All rights reserved.</p>
-                <p>서울시 강남구 테헤란로 123, 아샵빌딩 15층</p>
                 <div class="footer-legal">
                     <a href="#privacy">개인정보처리방침</a>
                     <a href="#terms">이용약관</a>
@@ -415,17 +402,13 @@
     </footer>
     
     <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/form-handler.js"></script>
     
     <!-- Google Sheets 연동 설정 -->
     <script>
-        // Google Apps Script URL (실제 배포 후 변경)
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
-        
-        // Unsplash 이미지 자동 로드
-        const UNSPLASH_ACCESS_KEY = 'YOUR_UNSPLASH_ACCESS_KEY';
+        // Google Apps Script 배포 URL (제공된 URL로 미리 설정됨)
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxaqrNwqBnzdXO0QsVFSDmAJz-Ul_k-0s_6w3a_Fd5UXtPsdUntZBGdH3fIRgO_B7jYNA/exec';
     </script>
 </body>
 </html>
