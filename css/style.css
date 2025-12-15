@@ -1,4 +1,4 @@
-/* style.css - ashop 새 디자인 (프리미엄 & 전략적) */
+/* style.css - ashop 새 디자인 (프리미엄 & 전략적) - 로고 수정 완료 */
 
 :root {
   /* 컬러 시스템 - 화려함 제거, 고급 심플 톤 */
@@ -43,6 +43,47 @@ body {
   padding: 0 20px;
 }
 
+/* ================================
+   🔥 로고 스타일 - 가시성 100% 보장
+   ================================ */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 24px;
+  gap: 0; /* 간격 제거하여 더 단단하게 */
+}
+
+.logo-mark {
+  color: var(--color-accent);
+  font-family: var(--font-secondary);
+  font-size: 28px;
+  font-weight: 800; /* 더욱 두껍게 */
+  line-height: 1;
+}
+
+.logo-text {
+  color: #000000 !important; /* 순수 검정으로 강제 (주변 색상 영향받지 않음) */
+  font-weight: 700; /* 충분히 두껍게 */
+  letter-spacing: 1px;
+  text-shadow: 0 0 1px rgba(0,0,0,0.2); /* 미세한 그림자로 가시성 향상 */
+  opacity: 1 !important; /* 투명도 100% 보장 */
+  -webkit-font-smoothing: antialiased; /* 맥/사파리에서 선명도 향상 */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 호버 효과 */
+.logo:hover .logo-mark {
+  transform: scale(1.05);
+  transition: var(--transition);
+}
+
+.logo:hover .logo-text {
+  color: #333333 !important; /* 약간 밝게 */
+  transition: var(--transition);
+}
+
 /* 헤더 */
 .main-header {
   position: fixed;
@@ -58,26 +99,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 24px;
-}
-
-.logo-mark {
-  color: var(--color-accent);
-  font-family: var(--font-secondary);
-  font-size: 28px;
-}
-
-.logo-text {
-  color: var(--color-primary);
-  font-weight: 300;
-  letter-spacing: 1px;
 }
 
 .nav-menu {
@@ -511,7 +532,9 @@ textarea {
   margin-bottom: 30px;
 }
 
-/* 푸터 */
+/* ================================
+   🔥 푸터 로고 스타일 통일
+   ================================ */
 .footer {
   background: var(--color-primary);
   color: var(--color-white);
@@ -528,10 +551,16 @@ textarea {
 .footer-logo {
   font-family: var(--font-secondary);
   font-size: 2rem;
-  color: var(--color-white);
+  color: var(--color-white) !important; /* 흰색 강제 */
   text-decoration: none;
   display: block;
   margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.footer-logo::first-letter {
+  color: var(--color-accent) !important; /* 첫 글자 'a'만 골드색 */
 }
 
 .footer-tagline {
@@ -590,3 +619,12 @@ textarea {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
 }
+
+/* ================================
+   🌟 추가: 필수 필드 표시 스타일
+   ================================ */
+.required-asterisk {
+  color: #ff4757;
+  font-weight: bold;
+  margin-left: 2px;
+  }
