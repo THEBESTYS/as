@@ -1,0 +1,182 @@
+/* responsive.css */
+
+/* 모바일 퍼스트 접근법 */
+
+/* 헤더 및 네비게이션 반응형 */
+@media (max-width: 1024px) {
+  .nav-menu {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 20, 0.95);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    z-index: 999;
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-btn {
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+/* 히어로 섹션 반응형 */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-visual {
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+    transform: none;
+    top: auto;
+    right: auto;
+  }
+  
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 120px;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* 서비스 그리드 반응형 */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-card {
+    padding: 30px 20px;
+  }
+}
+
+/* 폼 반응형 */
+@media (max-width: 768px) {
+  .consultation-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-section {
+    padding: 20px;
+  }
+}
+
+/* 푸터 반응형 */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-legal {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* 작은 화면 글자 크기 조정 */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* 다크 모드 대응 (기본이 다크 모드) */
+@media (prefers-color-scheme: light) {
+  body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+  }
+  
+  .nav-link {
+    color: #333;
+  }
+}
+
+/* 고대비 모드 대응 */
+@media (prefers-contrast: high) {
+  .btn-primary, .btn-secondary {
+    border: 2px solid currentColor;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    border: 2px solid currentColor;
+  }
+}
+
+/* 프린트 스타일 */
+@media print {
+  .bg-effects,
+  .glass-header,
+  .hero-buttons,
+  .social-links,
+  .btn-submit {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+}
