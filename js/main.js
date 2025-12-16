@@ -2,7 +2,9 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   // 1. 모바일 메뉴 토글
-  const menuToggle = document.querySelector('.menu-toggle');
+  const menuToggle = document.querySelector('.menu-toggle');async function testGoogleSheetsConnection() {
+  const testData = {
+    name: '테스트',
   const navMenu = document.querySelector('.nav-menu');
   
   if (menuToggle) {
@@ -312,30 +314,46 @@ function logFormData(formData) {
 // Google Sheets 전송 테스트 함수
 async function testGoogleSheetsConnection() {
   const testData = {
-    timestamp: new Date().toISOString(),
-    name: '테스트 사용자',
+    name: '테스트',
     email: 'test@example.com',
     phone: '010-1234-5678',
-    company: '테스트 회사',
-    industry: '테크/스타트업',
+    company: '테스트회사',
+    industry: 'IT/테크',
     'website-type': '브랜드 소개형',
     'page-count': '5페이지 이하',
     'design-style': '심플 / 미니멀',
-    references: 'https://example.com',
-    features: '온라인 예약/상담 신청',
+    references: 'https://test.com',
+    features: '게시판/블로그',
     timeline: '가능한 빨리',
     budget: '500-1000만원',
-    'project-desc': '테스트 프로젝트 설명입니다.',
+    'project-desc': '테스트',
     privacyAgree: 'true',
     marketingConsent: 'false',
-    formType: 'test-request'
+    timestamp: new Date().toISOString()
   };
   
+  const params = new URLSearchParams();
+  for (const key in testData) {
+    params.append(key, testData[key]);
+  }
+  
   try {
-    const params = new URLSearchParams();
-    for (const key in testData) {
-      params.append(key, testData[key]);
-    }
+    const response = await fetch('https://script.google.com/macros/s/AKfycbyXbYzkSN2vcGlmeaCFO51b4rQcibczGCnTiCrPbajM1dnPaPu-4gTzbZhdKxn2wq-X6w/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: params.toString()
+    });
+    
+    console.log('✅ Google Sheets 연결 테스트 성공');
+    return true;
+  } catch (error) {
+    console.error('❌ Google Sheets 연결 테스트 실패:', error);
+    return false;
+  }
+}
     const response = await fetch('https://script.google.com/macros/s/AKfycbyXbYzkSN2vcGlmeaCFO51b4rQcibczGCnTiCrPbajM1dnPaPu-4gTzbZhdKxn2wq-X6w/exec', {
       method: 'POST',
       mode: 'no-cors',
