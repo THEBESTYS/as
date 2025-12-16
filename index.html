@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -761,50 +762,114 @@
         // Google Apps Script 배포 URL (여기에 여러분의 배포 URL을 입력하세요)
         // Google Apps Script에서 배포 > 웹앱 > 배포 후 URL 복사
         // 예: https://script.google.com/macros/s/AKfycbxaqrNwqBnzdXO0QsVFSDmAJz-Ul_k-0s_6w3a_Fd5UXtPsdUntZBGdH3fIRgO_B7jYNA/exec
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyXbYzkSN2vcGlmeaCFO51b4rQcibczGCnTiCrPbajM1dnPaPu-4gTzbZhdKxn2wq-X6w/exec';
-   
-        // 로딩 표시 함수
-        function showLoading() {
-            document.getElementById('loadingOverlay').style.display = 'flex';
-        }
+ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyXbYzkSN2vcGlmeaCFO51b4rQcibczGCnTiCrPbajM1dnPaPu-4gTzbZhdKxn2wq-X6w/exec';
 
-        // 로딩 숨기기 함수
-        function hideLoading() {
-            document.getElementById('loadingOverlay').style.display = 'none';
-        }
-
-        // 성공 메시지 표시
-        function showSuccessMessage() {
-            document.getElementById('estimateForm').style.display = 'none';
-            document.getElementById('successMessage').style.display = 'block';
-            document.getElementById('errorMessage').style.display = 'none';
+    // 폼 제출 처리
+    document.getElementById('estimateForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // 로딩 표시
+        const loading = document.getElementById('loadingOverlay');
+        const submitBtn = document.getElementById('submitBtn');
+        const originalText = submitBtn.innerHTML;
+        
+        loading.style.display = 'flex';
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 처리 중...';
+        
+        try {
+            // 폼 데이터 수집
+            const formData = new FormData(this);
+            const data = {};
             
-            // 페이지 상단으로 스크롤
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        // 에러 메시지 표시
-        function showErrorMessage() {
-            document.getElementById('estimateForm').style.display = 'block';
-            document.getElementById('successMessage').style.display = 'none';
-            document.getElementById('errorMessage').style.display = 'block';
+            // 기본 필드
+            data.name = document.getElementById('name').value;
+            data.email = document.getElementById('email').value;
+            data.phone = document.getElementById('phone').value;
+            data.company = document.getElementById('company').value;
+            data.industry = document.getElementById('industry').value;
+            data.references = document.getElementById('references').value;
+            data.budget = document.getElementById('budget').value;
+            data['project-desc'] = document.getElementById('project-desc').value;
             
-            // 페이지 상단으로 스크롤
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+            // 체크박스 그룹
+            data['website-type'] = Array.from(document.querySelectorAll('input[name="website-type"]:checked'))
+                .map(cb => cb.value).join(', ');
+            data['design-style'] = Array.from(document.querySelectorAll('input[name="design-style"]:checked'))
+                .map(cb => cb.value).join(', ');
+            data.features = Array.from(document.querySelectorAll('input[name="features"]:checked'))
+                .map(cb => cb.value).join(', ');
+            
+            // 라디오 버튼
+            const pageCount = document.querySelector('input[name="page-count"]:checked');
+            data['page-count'] = pageCount ? pageCount.value : '';
+            
+            const timeline = document.querySelector('input[name="timeline"]:checked');
+            data.timeline = timeline ? timeline.value : '';
+            
+            // 동의 체크박스
+            data.privacyAgree = document.getElementById('privacyAgree').checked ? 'true' : 'false';
+            data.marketingConsent = document.getElementById('marketingConsent').checked ? 'true' : 'false';
+            
+            // 메타데이터
+            data.timestamp = new Date().toISOString();
+            data.pageUrl = window.location.href;
+            data.userAgent = navigator.userAgent;
+            
+            console.log('📤 전송 데이터:', data);
+            
+            // URL 인코딩
+            const params = new URLSearchParams();
+            for (const key in data) {
+                params.append(key, data[key]);
+            }
+            
+            // Google Sheets로 전송
+            await fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: params.toString()
             });
+            
+            // 성공 처리
+            setTimeout(() => {
+                loading.style.display = 'none';
+                showSuccessMessage();
+                
+                // 폼 리셋
+                this.reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }, 1500);
+            
+        } catch (error) {
+            console.error('❌ 오류:', error);
+            loading.style.display = 'none';
+            showErrorMessage();
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
         }
+    });
+    
+    function showSuccessMessage() {
+        document.getElementById('estimateForm').style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function showErrorMessage() {
+        document.getElementById('errorMessage').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function hideErrorMessage() {
+        document.getElementById('errorMessage').style.display = 'none';
+    }
 
-        // 에러 메시지 숨기기
-        function hideErrorMessage() {
-            document.getElementById('errorMessage').style.display = 'none';
-        }
-
-        // 폼 데이터를 JSON으로 변환하는 함수
+           // 폼 데이터를 JSON으로 변환하는 함수
         function getFormData() {
             const form = document.getElementById('estimateForm');
             const formData = new FormData(form);
