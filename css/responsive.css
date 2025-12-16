@@ -1,38 +1,298 @@
-/* responsive.css */
+/* responsive.css - Google Sheets 연동 폼 최적화 */
 
-/* 태블릿 (768px ~ 1024px) */
+/* 태블릿 (1024px 이하) */
 @media (max-width: 1024px) {
-  .hero-title {
-    font-size: 2.8rem;
+  body {
+    padding: 20px;
+    font-size: 20px;
   }
   
-  .hero-visual {
-    position: relative;
-    width: 100%;
-    margin-top: 40px;
-    transform: none;
-    top: auto;
-    right: auto;
+  .container {
+    border-radius: 20px;
+    max-width: 95%;
   }
   
-  .philosophy-content {
-    grid-template-columns: repeat(2, 1fr);
+  .header {
+    padding: 50px 40px;
+  }
+  
+  .header h1 {
+    font-size: 3rem;
+  }
+  
+  .header p {
+    font-size: 1.4rem;
+  }
+  
+  .form-container {
+    padding: 40px 35px;
+  }
+  
+  .form-section {
+    margin-bottom: 50px;
+    padding-bottom: 40px;
+  }
+  
+  .form-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 35px;
+  }
+  
+  /* 체크박스/라디오 그룹 */
+  .checkbox-group,
+  .radio-group {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .checkbox-label,
+  .radio-label {
+    padding: 22px;
+    min-height: 90px;
+    font-size: 1.2rem;
+  }
+  
+  /* 입력 필드 */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    padding: 22px;
+    font-size: 1.3rem;
+  }
+  
+  /* 구분선 */
+  .divider {
+    margin: 40px 0;
+  }
+  
+  /* 제출 버튼 */
+  .submit-btn {
+    padding: 25px 50px;
+    font-size: 1.5rem;
+    margin: 40px 0;
+  }
+  
+  /* 동의 체크박스 */
+  .agreement-checkbox {
+    padding: 22px;
+    font-size: 1.3rem;
+  }
+  
+  /* 성공/에러 메시지 */
+  .success-message,
+  .error-message {
+    padding: 80px 40px;
+  }
+  
+  .success-message h3,
+  .error-message h3 {
+    font-size: 2.5rem;
+  }
+  
+  /* Google Sheets 상태 표시 */
+  .gs-status {
+    bottom: 15px;
+    right: 15px;
+    font-size: 1.1rem;
+    padding: 10px 16px;
+  }
+  
+  /* 토스트 메시지 */
+  .toast-message {
+    font-size: 1.2rem;
+    padding: 12px 22px;
+    max-width: 90%;
+    white-space: normal;
   }
 }
 
-/* 모바일 (768px 이하) */
+/* 태블릿 (768px ~ 1024px) */
 @media (max-width: 768px) {
+  body {
+    padding: 15px;
+    font-size: 18px;
+  }
+  
+  .container {
+    border-radius: 15px;
+  }
+  
+  .header {
+    padding: 40px 30px;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .header p {
+    font-size: 1.3rem;
+    line-height: 1.7;
+  }
+  
+  .form-container {
+    padding: 30px 25px;
+  }
+  
+  .form-section {
+    margin-bottom: 40px;
+    padding-bottom: 35px;
+  }
+  
+  .form-section h3 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    border-left-width: 6px;
+  }
+  
+  .form-section h3 i {
+    margin-right: 15px;
+    font-size: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 30px;
+  }
+  
+  .form-group label {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  
+  /* 체크박스/라디오 그룹 - 1열로 변경 */
+  .checkbox-group,
+  .radio-group {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .checkbox-label,
+  .radio-label {
+    padding: 20px;
+    min-height: 80px;
+    font-size: 1.2rem;
+  }
+  
+  .checkbox-label input,
+  .radio-label input {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+  }
+  
+  /* 입력 필드 */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    padding: 20px;
+    font-size: 1.2rem;
+    border-width: 2px;
+    border-radius: 12px;
+  }
+  
+  textarea {
+    min-height: 100px;
+  }
+  
+  /* 구분선 */
+  .divider {
+    margin: 35px 0;
+    height: 3px;
+  }
+  
+  /* 제출 버튼 */
+  .submit-btn {
+    padding: 22px;
+    font-size: 1.4rem;
+    margin: 35px 0;
+    border-radius: 60px;
+  }
+  
+  .submit-btn i {
+    margin-right: 15px;
+    font-size: 1.3rem;
+  }
+  
+  /* 동의 체크박스 */
+  .agreement-checkbox {
+    padding: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .agreement-checkbox input {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+  }
+  
+  /* 알림 텍스트 */
+  .form-notice {
+    font-size: 1.2rem;
+    margin-top: 30px;
+    padding-top: 30px;
+  }
+  
+  /* 성공/에러 메시지 */
+  .success-message,
+  .error-message {
+    padding: 60px 30px;
+    border-radius: 15px;
+  }
+  
+  .success-message i,
+  .error-message i {
+    font-size: 5rem;
+    margin-bottom: 30px;
+  }
+  
+  .success-message h3,
+  .error-message h3 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+  }
+  
+  .success-message p,
+  .error-message p {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    line-height: 1.8;
+  }
+  
+  /* 에러 메시지 버튼 */
+  .error-message .submit-btn {
+    max-width: 350px;
+    font-size: 1.3rem;
+  }
+  
+  /* 필수 표시 */
+  .form-group label.required::after {
+    font-size: 1.4rem;
+  }
+  
+  /* 설명 텍스트 */
+  .form-note {
+    font-size: 1.1rem;
+  }
+  
+  /* 모바일 메뉴 (존재할 경우) */
   .nav-menu {
     display: none;
     position: fixed;
     top: 70px;
     left: 0;
     width: 100%;
-    background: var(--color-white);
+    background: white;
     flex-direction: column;
     padding: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    gap: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 1000;
   }
   
   .nav-menu.active {
@@ -40,87 +300,699 @@
   }
   
   .menu-toggle {
-    display: block;
-  }
-  
-  .hero-section {
-    padding: 120px 0 60px;
-    text-align: center;
-  }
-  
-  .hero-title {
-    font-size: 2.2rem;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
+    display: flex;
     align-items: center;
-  }
-  
-  .hero-buttons a {
-    width: 100%;
     justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    cursor: pointer;
   }
   
-  .philosophy-content {
-    grid-template-columns: 1fr;
+  /* 문자 수 표시기 */
+  .character-counter {
+    font-size: 1.1rem;
   }
   
-  .form-section {
-    padding: 30px 20px;
-  }
-  
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .checkbox-group-grid,
-  .radio-group {
-    flex-direction: column;
-    gap: 10px;
+  /* Google Sheets 상태 표시 */
+  .gs-status {
+    bottom: 10px;
+    right: 10px;
+    font-size: 1rem;
+    padding: 8px 14px;
+    border-radius: 10px;
   }
 }
 
 /* 작은 모바일 (480px 이하) */
 @media (max-width: 480px) {
-  .hero-title {
-    font-size: 1.8rem;
+  body {
+    padding: 10px;
+    font-size: 16px;
   }
   
-  .section-title {
-    font-size: 1.8rem;
+  .container {
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  }
+  
+  .header {
+    padding: 30px 20px;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .header p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .form-container {
+    padding: 25px 20px;
+  }
+  
+  .form-section {
+    margin-bottom: 35px;
+    padding-bottom: 30px;
   }
   
   .form-section h3 {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    border-left-width: 5px;
   }
   
-  .footer-content {
-    grid-template-columns: 1fr;
+  .form-section h3 i {
+    margin-right: 12px;
+    font-size: 1.3rem;
+  }
+  
+  .form-group {
+    margin-bottom: 25px;
+  }
+  
+  .form-group label {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  
+  /* 체크박스/라디오 레이블 */
+  .checkbox-label,
+  .radio-label {
+    padding: 18px;
+    min-height: 70px;
+    font-size: 1.1rem;
+    border-radius: 12px;
+  }
+  
+  .checkbox-label input,
+  .radio-label input {
+    width: 22px;
+    height: 22px;
+    margin-right: 12px;
+  }
+  
+  /* 입력 필드 */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    padding: 18px;
+    font-size: 1.1rem;
+    border-width: 2px;
+    border-radius: 10px;
+  }
+  
+  textarea {
+    min-height: 90px;
+  }
+  
+  select {
+    padding-right: 40px;
+  }
+  
+  /* 포커스 효과 */
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  select:focus,
+  textarea:focus {
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+  }
+  
+  /* 구분선 */
+  .divider {
+    margin: 30px 0;
+    height: 2px;
+  }
+  
+  /* 제출 버튼 */
+  .submit-btn {
+    padding: 20px;
+    font-size: 1.3rem;
+    margin: 30px 0;
+    border-radius: 50px;
+  }
+  
+  .submit-btn i {
+    margin-right: 12px;
+    font-size: 1.2rem;
+  }
+  
+  /* 동의 체크박스 */
+  .agreement-checkbox {
+    padding: 18px;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    border-radius: 12px;
+  }
+  
+  .agreement-checkbox input {
+    width: 22px;
+    height: 22px;
+    margin-right: 12px;
+  }
+  
+  /* 알림 텍스트 */
+  .form-notice {
+    font-size: 1.1rem;
+    margin-top: 25px;
+    padding-top: 25px;
+  }
+  
+  /* 성공/에러 메시지 */
+  .success-message,
+  .error-message {
+    padding: 50px 20px;
+    border-radius: 12px;
+    margin: 25px 0;
+  }
+  
+  .success-message i,
+  .error-message i {
+    font-size: 4rem;
+    margin-bottom: 25px;
+  }
+  
+  .success-message h3,
+  .error-message h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .success-message p,
+  .error-message p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.7;
+  }
+  
+  /* 필수 표시 */
+  .form-group label.required::after {
+    font-size: 1.3rem;
+  }
+  
+  /* 설명 텍스트 */
+  .form-note {
+    font-size: 1rem;
+  }
+  
+  /* 선택 상자 옵션 */
+  select option {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+  
+  /* 로딩 오버레이 */
+  .loading-overlay {
+    padding: 0 20px;
+  }
+  
+  .loading-spinner {
+    width: 60px;
+    height: 60px;
+    border-width: 6px;
+  }
+  
+  .loading-text {
+    font-size: 1.5rem;
+  }
+  
+  /* 문자 수 표시기 */
+  .character-counter {
+    font-size: 1rem;
+  }
+  
+  /* 에러 메시지 */
+  .form-error-message {
+    padding: 18px;
+    font-size: 1.2rem;
+    border-width: 2px;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+  
+  .form-error-message i {
+    font-size: 1.8rem;
+  }
+  
+  /* 토스트 메시지 */
+  .toast-message {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 10px;
+    bottom: 20px;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    transform: translateX(0) translateY(100px);
     text-align: center;
   }
   
-  .footer-legal {
-    flex-direction: column;
+  /* Google Sheets 상태 표시 */
+  .gs-status {
+    display: none; /* 매우 작은 화면에서는 숨김 */
+  }
+  
+  /* 입력 필드 검증 스타일 */
+  input:invalid:focus,
+  select:invalid:focus,
+  textarea:invalid:focus {
+    border-color: #ff6b6b;
+  }
+}
+
+/* 매우 작은 모바일 (320px 이하) */
+@media (max-width: 320px) {
+  body {
+    padding: 8px;
+    font-size: 15px;
+  }
+  
+  .header {
+    padding: 25px 15px;
+  }
+  
+  .header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .header p {
+    font-size: 1rem;
+  }
+  
+  .form-container {
+    padding: 20px 15px;
+  }
+  
+  .form-section h3 {
+    font-size: 1.3rem;
+  }
+  
+  .checkbox-label,
+  .radio-label {
+    padding: 15px;
+    min-height: 65px;
+    font-size: 1rem;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    padding: 15px;
+    font-size: 1rem;
+  }
+  
+  .submit-btn {
+    padding: 18px;
+    font-size: 1.2rem;
+  }
+  
+  .agreement-checkbox {
+    padding: 15px;
+    font-size: 1rem;
+  }
+}
+
+/* 가로 모드 (모바일) */
+@media (max-height: 600px) and (orientation: landscape) {
+  body {
+    padding: 10px;
+  }
+  
+  .container {
+    max-width: 100%;
+  }
+  
+  .header {
+    padding: 30px 20px;
+  }
+  
+  .form-container {
+    padding: 20px;
+  }
+  
+  .form-section {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+  }
+  
+  .checkbox-group,
+  .radio-group {
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+  }
+  
+  .checkbox-label,
+  .radio-label {
+    padding: 15px;
+    min-height: 70px;
+    font-size: 1rem;
+  }
+  
+  textarea {
+    min-height: 80px;
+  }
+  
+  .divider {
+    margin: 25px 0;
+  }
+}
+
+/* 높은 해상도 모바일 (예: iPhone 12 Pro Max) */
+@media (min-width: 428px) and (max-width: 768px) {
+  body {
+    font-size: 19px;
+  }
+  
+  .container {
+    max-width: 92%;
+  }
+  
+  .header h1 {
+    font-size: 2.8rem;
+  }
+  
+  .checkbox-label,
+  .radio-label {
+    min-height: 85px;
   }
 }
 
 /* 다크 모드 대응 (옵션) */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary: #FFFFFF;
-    --color-secondary: #CCCCCC;
-    --color-light: #1A1A1A;
-    --color-white: #2D2D2D;
+    --color-primary: #ffffff;
+    --color-secondary: #cccccc;
+    --color-light: #1a1a1a;
+    --color-white: #2d2d2d;
     --color-border: #444444;
+    --color-text: #f0f0f0;
+    --color-bg: #121212;
+  }
+  
+  body {
+    background: #121212;
+    color: #f0f0f0;
+  }
+  
+  .container {
+    background: #2d2d2d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .header {
+    background: linear-gradient(135deg, #5568d4 0%, #654aa0 100%);
+  }
+  
+  .form-section {
+    border-bottom-color: #444444;
+  }
+  
+  .form-section h3 {
+    color: #ffffff;
+    border-left-color: #5568d4;
+  }
+  
+  .form-group label {
+    color: #f0f0f0;
   }
   
   /* 입력 필드는 여전히 밝게 유지 */
   .form-group input,
   .form-group select,
   .form-group textarea {
-    background: #FFFFFF !important;
+    background: #ffffff !important;
     color: #333333 !important;
+    border-color: #666666;
+  }
+  
+  /* 체크박스/라디오 스타일 */
+  .checkbox-label,
+  .radio-label {
+    background: #3a3a3a;
+    color: #f0f0f0;
+    border-color: #555555;
+  }
+  
+  .checkbox-label:hover,
+  .radio-label:hover {
+    background: #4a4a4a;
+    border-color: #667eea;
+  }
+  
+  .checkbox-label input:checked + span,
+  .radio-label input:checked + span {
+    background: #5568d4;
+    border-color: #667eea;
+  }
+  
+  /* 구분선 */
+  .divider {
+    background: linear-gradient(90deg, transparent, #667eea, transparent);
+  }
+  
+  /* 성공 메시지 */
+  .success-message {
+    background: #1e3a1e;
+    color: #d4edda;
+  }
+  
+  /* 에러 메시지 */
+  .error-message {
+    background: #3a1e1e;
+    color: #f8d7da;
+    border-color: #ff6b6b;
+  }
+  
+  /* 동의 체크박스 */
+  .agreement-checkbox {
+    background: #3a3a3a;
+    color: #f0f0f0;
+  }
+  
+  /* 알림 텍스트 */
+  .form-notice {
+    color: #aaaaaa;
+    border-top-color: #444444;
+  }
+  
+  /* 설명 텍스트 */
+  .form-note {
+    color: #aaaaaa;
+  }
+  
+  /* 문자 수 표시기 */
+  .character-counter {
+    color: #aaaaaa;
+  }
+  
+  /* 에러 메시지 */
+  .form-error-message {
+    background: #3a1e1e;
+    color: #f8d7da;
+    border-color: #ff6b6b;
+  }
+  
+  /* 토스트 메시지 */
+  .toast-message {
+    background: #5568d4;
+    color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Google Sheets 상태 표시 */
+  .gs-status {
+    background: #3a3a3a;
+    color: #f0f0f0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* 모바일 메뉴 */
+  .nav-menu {
+    background: #2d2d2d;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .menu-close-overlay {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* 접근성: 높은 명암비 모드 */
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary: #000000;
+    --color-secondary: #333333;
+    --color-border: #000000;
+  }
+  
+  body {
+    color: #000000;
+    background: #ffffff;
+  }
+  
+  .header {
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    color: #ffffff;
+  }
+  
+  .container {
+    border: 2px solid #000000;
+  }
+  
+  .form-section h3 {
+    border-left-color: #000000;
+  }
+  
+  .checkbox-label,
+  .radio-label {
+    border: 2px solid #000000;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    border: 2px solid #000000;
+  }
+  
+  .submit-btn {
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    color: #ffffff;
+    border: 2px solid #000000;
+  }
+}
+
+/* 접근성: 애니메션 줄이기 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .submit-btn:hover {
+    transform: none !important;
+  }
+  
+  .checkbox-label:hover,
+  .radio-label:hover {
+    transform: none !important;
+  }
+  
+  .success-message,
+  .error-message,
+  .toast-message {
+    animation: none !important;
+  }
+}
+
+/* 인쇄 스타일 */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    padding: 0;
+  }
+  
+  .container {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    max-width: 100% !important;
+  }
+  
+  .header {
+    background: white !important;
+    color: black !important;
+    padding: 20px !important;
+  }
+  
+  .form-container {
+    padding: 20px !important;
+  }
+  
+  .submit-btn,
+  .menu-toggle,
+  .gs-status,
+  .toast-message,
+  .character-counter {
+    display: none !important;
+  }
+  
+  .form-section {
+    page-break-inside: avoid;
+    border-bottom: 1px solid #ccc !important;
+  }
+  
+  .checkbox-label,
+  .radio-label {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
+}
+
+/* 삼성 Galaxy Fold 같은 매우 작은 디바이스 */
+@media (max-width: 280px) {
+  body {
+    font-size: 14px;
+    padding: 5px;
+  }
+  
+  .header {
+    padding: 20px 10px;
+  }
+  
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .header p {
+    font-size: 0.9rem;
+  }
+  
+  .form-container {
+    padding: 15px 10px;
+  }
+  
+  .form-section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .checkbox-label,
+  .radio-label {
+    padding: 12px;
+    min-height: 60px;
+    font-size: 0.9rem;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+  
+  .submit-btn {
+    padding: 15px;
+    font-size: 1rem;
   }
 }
