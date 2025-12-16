@@ -336,8 +336,7 @@ async function testGoogleSheetsConnection() {
     for (const key in testData) {
       params.append(key, testData[key]);
     }
-    
-    const response = await fetch('https://script.google.com/macros/s/AKfycbxaqrNwqBnzdXO0QsVFSDmAJz-Ul_k-0s_6w3a_Fd5UXtPsdUntZBGdH3fIRgO_B7jYNA/exec', {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbyXbYzkSN2vcGlmeaCFO51b4rQcibczGCnTiCrPbajM1dnPaPu-4gTzbZhdKxn2wq-X6w/exec', {
       method: 'POST',
       mode: 'no-cors',
       headers: {
